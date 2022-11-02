@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>My Order Details</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Order {{ index }} Details</h1>
+        <div>
+            <p>
+                Name: <b>{{ order.customer_name }}</b><br>
+                Date: <b>{{ order.order_date }}</b><br>
+                Pizza: <b>{{ order.pizza_name }}</b><br>
+                Toppings:
+                {% for topping in order.pizza_toppings %}
+                    <b>{{ topping }},</b>
+                {% endfor %}
+            </p>
+        </div> 
+    </body>
+</html>
+            

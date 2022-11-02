@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>All Orders</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>All Orders!</h1>
+        <div>
+            <p>
+                {% for order in orders %}
+                    <a href="/orders/{{ loop.index }}">Order {{ loop.index }}: <b>{{ order.pizza_name }}</b></a><br>
+                {% endfor %}
+            </p>
+        </div> 
+    </body>
+</html>
+            
